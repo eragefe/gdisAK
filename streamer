@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mpc stop
+aplay /root/streamer.wav
+mpc clear

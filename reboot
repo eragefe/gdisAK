@@ -1,0 +1,2 @@
+aplay /root/reboot.wav
+reboot

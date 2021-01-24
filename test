@@ -1,0 +1,2 @@
+mpc stop
+aplay /root/test.wav

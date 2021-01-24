@@ -10,7 +10,7 @@
             ir_recv: ir-receiver {
                 status = "okay";
                 compatible = "gpio-ir-receiver";
-                gpios = <&gpio2 4 0>;  /* GPIO2_A4 0=GPIO_ACTIVE_HIGH */
+                gpios = <&gpio1 25 0>;  /* GPIO2_A4 0=GPIO_ACTIVE_HIGH */
             };
         };
     };

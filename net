@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ $(hostname -I) ]]; then
+    mpc stop
+    aplay /root/net.wav
+else
+    aplay /root/nonet.wav
+fi

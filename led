@@ -1,7 +1,5 @@
 #!/bin/bash
 
-i2cset -y 1 17 0 0x0f
-i2cset -y 1 17 8 0x04
 echo none > /sys/class/leds/rockpis:blue:user/trigger
 
 while :

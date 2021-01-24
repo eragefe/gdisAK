@@ -1,2 +1,4 @@
+#!/bin/bash
+
 aplay /root/reboot.wav
 reboot

@@ -1,2 +1,4 @@
+#!/bin/bash
+
 mpc stop
 aplay /root/test.wav

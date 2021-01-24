@@ -20,6 +20,7 @@
                 target = <&i2s_8ch_0>;
                 
                 __overlay__ {
+                        rockchip,mclk-fs = <64>;
                         status = "okay";
                 };
         };
@@ -39,7 +40,6 @@
                     sound {
                         compatible = "rockchip,multicodecs-card";
                         rockchip,card-name = "GDis_DAC_out";
-                        rockchip,mclk-fs = <256>;
                         rockchip,cpu = <&i2s_8ch_0>;
                         rockchip,codec = <&i2s0>;
                         };

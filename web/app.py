@@ -26,15 +26,6 @@ def tidal():
     os.system('bash /root/net')
     return render_template('app.html')
 
-@app.route('/tidal_save_credentials', methods = ['GET', 'POST'])
-def tidal_save_credentials():
-    ssid = request.form['ssid']
-    wifi_key = request.form['wifi_key']
-    create_upmpdcli(ssid, wifi_key)
-    os.system('mv upmpdcli.tmp /etc/upmpdcli.conf')
-    time.sleep(1)
-    os.system('reboot')
-
 @app.route('/save_credentials', methods = ['GET', 'POST'])
 def save_credentials():
     ssid = request.form['ssid']
@@ -91,58 +82,9 @@ def coaxial2():
     os.system('')
     return render_template('app.html')
 
-@app.route('/sharp', methods = ['GET', 'POST'])
-def sharp():
-    os.system('i2cset -y 1 17 1 0x02')
-    os.system('i2cset -y 1 17 2 0x00')
-    return render_template('app.html')
-
-@app.route('/slow', methods = ['GET', 'POST'])
-def slow():
-    os.system('i2cset -y 1 17 1 0x02')
-    os.system('i2cset -y 1 17 2 0x01')
-    return render_template('app.html')
-
-@app.route('/sdsharp', methods = ['GET', 'POST'])
-def sdsharp():
-    os.system('i2cset -y 1 17 1 0x22')
-    os.system('i2cset -y 1 17 2 0x00')
-    return render_template('app.html')
-
-@app.route('/sdslow', methods = ['GET', 'POST'])
-def sdslow():
-    os.system('i2cset -y 1 17 1 0x22')
-    os.system('i2cset -y 1 17 2 0x01')
-    return render_template('app.html')
-
-@app.route('/superslow', methods = ['GET', 'POST'])
-def superslow():
-    os.system('i2cset -y 1 17 5 0x01')
-    return render_template('app.html')
-
 @app.route('/s1', methods = ['GET', 'POST'])
 def s1():
-    os.system('i2cset -y 1 17 8 0x00')
-    return render_template('app.html')
-
-@app.route('/s2', methods = ['GET', 'POST'])
-def s2():
-    os.system('i2cset -y 1 17 8 0x01')
-    return render_template('app.html')
-
-@app.route('/s3', methods = ['GET', 'POST'])
-def s3():
-    os.system('i2cset -y 1 17 8 0x02')
-    return render_template('app.html')
-
-@app.route('/s4', methods = ['GET', 'POST'])
-def s4():
-    os.system('i2cset -y 1 17 8 0x03')
-    return render_template('app.html')
-
-@app.route('/s5', methods = ['GET', 'POST'])
-def s5():
-    os.system('i2cset -y 1 17 8 0x04')
+    os.system('bash /root/test')
     return render_template('app.html')
 
 ######## FUNCTIONS ##########
@@ -168,18 +110,6 @@ def create_wpa_supplicant(ssid, wifi_key):
     temp_conf_file.write('\n')
     temp_conf_file.write('nmcli r wifi on\n')
     temp_conf_file.write('nmcli d wifi connect ' + ssid + '  password  ' + wifi_key + '\n')
-    temp_conf_file.close
-
-def create_upmpdcli(ssid, wifi_key):
-
-    temp_conf_file = open('upmpdcli.tmp', 'w')
-
-    temp_conf_file.write('uprclautostart = 1\n')
-    temp_conf_file.write('friendlyname = GDis-NP\n')
-    temp_conf_file.write('msfriendlyname = GDis-Tidal-server\n')
-    temp_conf_file.write('tidaluser = ' + ssid + '\n')
-    temp_conf_file.write('tidalpass = ' + wifi_key + '\n')
-    temp_conf_file.write('tidalquality = lossless\n')
     temp_conf_file.close
 
 if __name__ == '__main__':

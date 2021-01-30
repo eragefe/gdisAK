@@ -37,14 +37,12 @@ def save_credentials():
 
 @app.route('/dispon', methods = ['GET', 'POST'])
 def dispon():
-    os.system('python /root/neoplus2/oled/oled2.py &')
+    os.system('bash /root/volup')
     return render_template('app.html')
 
 @app.route('/dispoff', methods = ['GET', 'POST'])
 def dispoff():
-    pid = os.popen('pgrep -f oled').read().strip()
-    os.system('pkill -f oled')
-    os.system('python /root/neoplus2/oled/off.py &')
+    os.system('bash /root/voldown')
     return render_template('app.html')
 
 @app.route('/reboot', methods = ['GET', 'POST'])

@@ -1,0 +1,6 @@
+i2cset -y 1 17 0 7
+i2cset -y 1 17 1 2
+i2cset -y 1 17 3 255
+i2cset -y 1 17 4 255
+
+echo none > /sys/class/leds/rockpis:blue:user/trigger

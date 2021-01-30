@@ -20,7 +20,7 @@
                 target = <&i2s_8ch_0>;
                 
                 __overlay__ {
-                        rockchip,mclk-fs = <64>;
+                        rockchip,bclk-fs = <256>;
                         status = "okay";
                 };
         };

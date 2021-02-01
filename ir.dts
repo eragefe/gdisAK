@@ -14,12 +14,4 @@
             };
         };
     };
-
-    fragment@1 {
-        target = <&pdm_8ch>;
-        __overlay__ {
-            status = "disable";
-        };
-    };
-
 };

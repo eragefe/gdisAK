@@ -3,7 +3,11 @@
 a=$(i2cget -y 1 17 3) 
 b=$(($a))
 c=$((b++)) 
+
+if (("$b" <= 255))
+then
 i2cset -y 1 17 3 $b
 i2cset -y 1 17 4 $b
+fi
 
 echo "$(($b-157))" > /root/vol

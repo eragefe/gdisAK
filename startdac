@@ -7,3 +7,4 @@ i2cset -y 1 17 4 220
 i2cset -y 1 17 8 4
 
 echo none > /sys/class/leds/rockpis:blue:user/trigger
+bash /root/streamer

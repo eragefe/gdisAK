@@ -5,14 +5,15 @@
   <div id="indexContent">
       <ul>
         <img src="/static/gdis.jpg"> <label for="menu">G-Dis DAC</label>
-        <li><label for="menu">Volume</label></li>
-        <li><pre>{{ vol }}</pre> <a href="{{ url_for('dispon') }}" class="dispon">UP</a> <a href="{{ url_for('dispoff') }}" class="dispoff">DOWN</a></li>
-        <li><label for="menu">Input</label></li>
-        <li><a href="{{ url_for('streamer') }}" class="wifi">Network</a> <a href="{{ url_for('coaxial1') }}" class="coaxial1">Coaxial 1</a> </li>
-        <li><a href="{{ url_for('optical1') }}" class="optical1">Optical 1</a> <a href="{{ url_for('optical2') }}" class="optical2">Optical 2</a></label></li>
         <li><label for="menu2">Settings</label></li>
         <li><a href="{{ url_for('wifi') }}" class="wifi">WiFi setup</a> <a href="{{ url_for('tidal') }}" class="tidal">Network test</a></label></li>
         <li><a href="{{ url_for('s1') }}" class="s1">Sound check</a></label></li> 
+        <li><label for="menu">Input</label></li>
+        <li><a href="{{ url_for('streamer') }}" class="wifi">Network</a> <a href="{{ url_for('coaxial1') }}" class="coaxial1">Coaxial 1</a> </li>
+        <li><a href="{{ url_for('optical1') }}" class="optical1">Optical 1</a> <a href="{{ url_for('optical2') }}" class="optical2">Optical 2</a></label></li>
+        <li><label for="menu">Volume</label></li>
+        <li><a href="{{ url_for('dispon') }}" class="dispon">UP</a> <a href="{{ url_for('dispoff') }}" class="dispoff">DOWN</a></li>
+        <pre>{{ content }}</pre>
         <li><label for="menu">Power</label></li>
         <li><a href="{{ url_for('reboot') }}" class="reboot">Reboot</a> <a href="{{ url_for('poweroff') }}" class="poweroff">Power off</a></li>
       </ul>

@@ -9,7 +9,9 @@ app.debug = True
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/wifi')
 def wifi():
@@ -38,12 +40,16 @@ def save_credentials():
 @app.route('/dispon', methods = ['GET', 'POST'])
 def dispon():
     os.system('bash /root/volup')
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/dispoff', methods = ['GET', 'POST'])
 def dispoff():
     os.system('bash /root/voldown')
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/reboot', methods = ['GET', 'POST'])
 def reboot():

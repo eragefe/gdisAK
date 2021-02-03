@@ -73,14 +73,16 @@ label[for=menu]{
     font-size:1.4rem;
 }
 
-label[for=menu2]{
-    font-size:1.7rem;
+span {
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 6px
 }
 
 /* Select
 ---------------------------------------------------------*/
 
-li label {
+li.label {
     display:inline-block;
     margin: 0.5em 0;
     padding: 0.5em 0;
@@ -151,7 +153,7 @@ select.wifiNetworkInputs {
         color: #ffc300;
 }
 
-.tidal{
+.net{
         font-size: 1.5rem;
         color: #ffc300;
 }
@@ -176,37 +178,7 @@ select.wifiNetworkInputs {
         color: #ffc300;
 }
 
-.sharp{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.slow{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
 .s1{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.s2{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.s3{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.s4{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.s5{
         font-size: 1.5rem;
         color: #ffc300;
 }
@@ -221,29 +193,6 @@ select.wifiNetworkInputs {
         color: #ffc300;
 }
 
-.sdsharp{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.sdslow{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.superslow{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.dot{
-        font-size: 1.5rem;
-        color: #000;
-}
-.spot{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
 .streamer{
         font-size: 1.5rem;
         color: #ffc300;
@@ -255,10 +204,6 @@ select.wifiNetworkInputs {
 .optical2{
         font-size: 1.5rem;
         color: #ffc300;
-}
-.tab { 
-        display:inline-block; 
-        margin-left: 40px; 
 }
 
 /* Wifi Icon

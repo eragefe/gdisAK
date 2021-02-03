@@ -23,10 +23,12 @@ def wifi():
 def manual_ssid_entry():
     return render_template('manual_ssid_entry.html')
 
-@app.route('/tidal')
-def tidal():
+@app.route('/net')
+def net():
     os.system('bash /root/net')
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/save_credentials', methods = ['GET', 'POST'])
 def save_credentials():
@@ -64,32 +66,44 @@ def poweroff():
 @app.route('/streamer', methods = ['GET', 'POST'])
 def streamer():
     os.system('bash /root/streamer')
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol
 
 @app.route('/optical1', methods = ['GET', 'POST'])
 def optical1():
     os.system('bash /root/optical1')
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/optical2', methods = ['GET', 'POST'])
 def optical2():
     os.system('bash /root/optical2')
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/coaxial1', methods = ['GET', 'POST'])
 def coaxial1():
     os.system('bash /root/coaxial1')
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/coaxial2', methods = ['GET', 'POST'])
 def coaxial2():
     os.system('')
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/s1', methods = ['GET', 'POST'])
 def s1():
     os.system('bash /root/test')
-    return render_template('app.html')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 ######## FUNCTIONS ##########
 

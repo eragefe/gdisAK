@@ -39,15 +39,15 @@ def save_credentials():
     os.system('sed -i "$ i bash /root/startwifi" /etc/rc.local')
     os.system('bash /root/wifi')
 
-@app.route('/dispon', methods = ['GET', 'POST'])
-def dispon():
+@app.route('/¨volup', methods = ['GET', 'POST'])
+def volup():
     os.system('bash /root/volup')
     with open("/root/vol", "r") as f:
          vol = f.read()
     return render_template('app.html', vol=vol)
 
-@app.route('/dispoff', methods = ['GET', 'POST'])
-def dispoff():
+@app.route('/voldown', methods = ['GET', 'POST'])
+def voldown():
     os.system('bash /root/voldown')
     with open("/root/vol", "r") as f:
          vol = f.read()
@@ -68,7 +68,7 @@ def streamer():
     os.system('bash /root/streamer')
     with open("/root/vol", "r") as f:
          vol = f.read()
-    return render_template('app.html', vol=vol
+    return render_template('app.html', vol=vol)
 
 @app.route('/optical1', methods = ['GET', 'POST'])
 def optical1():

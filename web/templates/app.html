@@ -6,7 +6,7 @@
       <ul>
         <img src="/static/gdis.jpg"> <label for="menu">G-Dis DAC</label>
         <li><label for="menu">Volume</label></li>
-        <pre><a href="{{ url_for('dispon') }}" class="dispon">UP</a>  <a href="{{ url_for('dispoff') }}" class="dispoff">DOWN</a>   {{ vol }}</pre>
+        <pre><a href="{{ url_for('volup') }}" class="volup">UP</a>  <a href="{{ url_for('voldown') }}" class="voldown">DOWN</a>   {{ vol }}</pre>
         <label for="menu">Input</label>
         <li><a href="{{ url_for('streamer') }}" class="streamer">Network</a>   <a href="{{ url_for('coaxial1') }}" class="coaxial1">Coaxial 1</a></li>
         <li><a href="{{ url_for('optical1') }}" class="optical1">Optical 1</a> <a href="{{ url_for('optical2') }}" class="optical2">Optical 2</a></label></li>

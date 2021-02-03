@@ -168,12 +168,12 @@ select.wifiNetworkInputs {
         color: #ffc300;
 }
 
-.dispon{
+.volup{
         font-size: 1.5rem;
         color: #ffc300;
 }
 
-.dispoff{
+.voldown{
         font-size: 1.5rem;
         color: #ffc300;
 }

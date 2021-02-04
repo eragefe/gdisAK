@@ -20,7 +20,7 @@ div#mainContent{
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: #fff;
 }
 
@@ -30,7 +30,7 @@ div#indexContent{
     width: 100%;
     margin: 0 auto;
     text-align: left;
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: #fff;
 }
 
@@ -61,22 +61,16 @@ div#indexContent ul{
 }
 
 div#indexContent form {
-    margin-top:-2em;
+    margin-top:1em;
 }
 
 label[for=ssid],
 label[for=wifi_key]{
-    font-size:1.9rem;
+    font-size:1.4rem;
 }
 
 label[for=menu]{
     font-size:1.4rem;
-}
-
-span {
-    display: block;
-    overflow: hidden;
-    padding: 0 4px 0 6px
 }
 
 /* Select
@@ -127,9 +121,10 @@ select.wifiNetworkInputs {
 
 .wifiNetworkInputs{
     width: 100%;
-    padding:1em;
+    margin:2em 0;
+    padding:.5em;
     font-size: 1.4rem;
-    color: #999;
+    color: #fff;
     background: #111;
     border:#999 solid 1px;
 }
@@ -138,72 +133,44 @@ select.wifiNetworkInputs {
     width: 100%;
     margin:2em 0;
     padding:.5em;
-    background-color: #064;
-    font-size: 2rem;
+    background-color: #800000;
+    font-size: 1rem;
     color: #fff;
 }
 
 .manualSSIDEntry{
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: #deab04;
 }
 
-.wifi{
-        font-size: 1.5rem;
-        color: #ffc300;
+.vol{
+        font-size: 5rem;
+        color: #ffffcc;
 }
 
-.net{
+.link{
         font-size: 1.5rem;
-        color: #ffc300;
+        color: #c29970;
 }
 
-.poweroff{
-        font-size: 1.5rem;
-        color: #ffc300;
+.button{
+        color: #ffffff;
+        background-color: #800000;
 }
 
-.reboot{
-        font-size: 1.5rem;
-        color: #ffc300;
+.button2{
+        color: #ffffff;
+        background-color: #4d2600;
 }
 
-.volup{
-        font-size: 1.5rem;
-        color: #ffc300;
+.button3{
+        color: #ffffff;
+        background-color: #004d1a;
 }
 
-.voldown{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.s1{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.coaxial1{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.coaxial2{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-
-.streamer{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-.optical1{
-        font-size: 1.5rem;
-        color: #ffc300;
-}
-.optical2{
-        font-size: 1.5rem;
-        color: #ffc300;
+.button4{
+        color: #ffffff;
+        background-color: #001a09;
 }
 
 /* Wifi Icon

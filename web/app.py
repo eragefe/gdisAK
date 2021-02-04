@@ -23,13 +23,6 @@ def wifi():
 def manual_ssid_entry():
     return render_template('manual_ssid_entry.html')
 
-@app.route('/net')
-def net():
-    os.system('bash /root/net')
-    with open("/root/vol", "r") as f:
-         vol = f.read()
-    return render_template('app.html', vol=vol)
-
 @app.route('/save_credentials', methods = ['GET', 'POST'])
 def save_credentials():
     ssid = request.form['ssid']
@@ -38,6 +31,35 @@ def save_credentials():
     os.system('mv wifi.tmp /root/wifi')
     os.system('sed -i "$ i bash /root/startwifi" /etc/rc.local')
     os.system('bash /root/wifi')
+
+@app.route('/net')
+def net():
+    os.system('bash /root/net')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
+
+@app.route('/nos')
+def nos():
+    os.system('i2cset -y 1 17 5 1')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
+
+@app.route('/sound1')
+def sound1():
+    os.system('i2cset -y 1 17 5 0')
+    os.system('i2cset -y 1 17 8 4')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
+
+@app.route('/sound2')
+def sound2():
+    os.system('i2cset -y 1 17 8 0')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/¨volup', methods = ['GET', 'POST'])
 def volup():

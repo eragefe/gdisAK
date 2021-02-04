@@ -1,20 +1,16 @@
-
 {% extends 'layout.html' %}
 
 {% block body %}
   <div id="indexContent">
       <ul>
-        <img src="/static/gdis.jpg"> <label for="menu">G-Dis DAC</label>
-        <li><label for="menu">Volume</label></li>
-        <pre><a href="{{ url_for('volup') }}" class="volup">UP</a>  <a href="{{ url_for('voldown') }}" class="voldown">DOWN</a>   {{ vol }}</pre>
-        <label for="menu">Input</label>
-        <li><a href="{{ url_for('streamer') }}" class="streamer">Network</a>   <a href="{{ url_for('coaxial1') }}" class="coaxial1">Coaxial 1</a></li>
-        <li><a href="{{ url_for('optical1') }}" class="optical1">Optical 1</a> <a href="{{ url_for('optical2') }}" class="optical2">Optical 2</a></label></li>
-        <label for="menu">Settings</label>
-        <li><a href="{{ url_for('wifi') }}" class="wifi">WiFi setup</a> <a href="{{ url_for('net') }}" class="net">Network test</a></label></li>
-        <li><a href="{{ url_for('s1') }}" class="s1">Sound check</a></label></li> 
-        <label for="menu">Power</label>
-        <li><a href="{{ url_for('reboot') }}" class="reboot">Reboot</a> <a href="{{ url_for('poweroff') }}" class="poweroff">Power off</a></li>
+        <p align="center"><img src="/static/gdis.jpg"></img></p>
+        <p align="center"><a href="{{ url_for('streamer') }}"><button class="button4" style="height:26px;width:70px">Network</button></a><a href="{{ url_for('coaxial1') }}"><button class="button4" style="height:26px;width:70px">Coax 1</button></a><a href="{{ url_for('optical1') }}"><button class="button4" style="height:26px;width:70px">Optical 1</button></a><a href="{{ url_for('optical2') }}"><button class="button4" style="height:26px;width:70px">Optical 2</button></a></p>
+
+        <p align="center" class="vol"><a href="{{ url_for('volup') }}" style="font-size:50%;" style="color:transparent;">&#128266; &nbsp;</a> {{ vol }} <a href="{{ url_for('voldown') }}" style="font-size:50%;">&nbsp; &#128265;</a></p>
+        <p align="center"><a href="{{ url_for('nos') }}"><button class="button4" style="height:26px;width:70px">NOS</button></a> &nbsp;&nbsp;<a href="{{ url_for('sound1') }}"><button class="button4" style="height:26px;width:70px">Sound 1</button></a> &nbsp;&nbsp;<a href="{{ url_for('sound2') }}"><button class="button4" style="height:26px;width:70px">Sound 2</button></a></p> 
+        <p align="center"><a href="{{ url_for('wifi') }}"><button class="button2" style="height:40px;width:70px">WiFi setup</button></a> &nbsp;&nbsp;<a href="{{ url_for('net') }}"><button class="button2" style="height:40px;width:70px">Network test</button></a> &nbsp;&nbsp;<a href="{{ url_for('s1') }}"><button class="button2" style="height:40px;width:70px">Sound check</button></a>
+        <p align="center"><label for="menu">&nbsp;</label></p>
+        <p align="center"><a href="{{ url_for('reboot') }}"><button class="button" style="height:30px;width:70px">Reboot</button></a>&nbsp;&nbsp;&nbsp;&#9889;&nbsp;&nbsp;&nbsp;<a href="{{ url_for('poweroff') }}"><button class="button" style="height:30px;width:70px">OFF</button></a></p>
       </ul>
     </form>
   </div>

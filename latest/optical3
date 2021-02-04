@@ -1,7 +1,0 @@
-#!/bin/bash
-
-mpc stop
-aplay /root/opt3.wav
-mpc clear
-mpc add alsa://hw:0
-mpc play

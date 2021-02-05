@@ -127,6 +127,34 @@ def s1():
          vol = f.read()
     return render_template('app.html', vol=vol)
 
+@app.route('/prev', methods = ['GET', 'POST'])
+def prev():
+    os.system('mpc prev')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
+
+@app.route('/play', methods = ['GET', 'POST'])
+def play():
+    os.system('mpc toggle')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
+
+@app.route('/stop', methods = ['GET', 'POST'])
+def stop():
+    os.system('mpc stop')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
+
+@app.route('/next', methods = ['GET', 'POST'])
+def next():
+    os.system('mpc next')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
+
 ######## FUNCTIONS ##########
 
 def scan_wifi_networks():

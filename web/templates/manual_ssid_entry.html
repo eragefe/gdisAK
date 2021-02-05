@@ -2,9 +2,9 @@
 
 {% block body %}
   <div id="mainContent">
-    <p align="center"><img src="/static/gdis.jpg"></p>
+    <p align="center"><img src="/static/gdis.png"></p>
     <p align="center"><label for="menu">Type your WiFi network</label></p>
-    <li><form action="{{ url_for('save_credentials') }}" method=post></li>
+    <form action="{{ url_for('save_credentials') }}" method=post>
       <ul>
         <li><input type="text" name="ssid", class="wifiNetworkInputs"></li>
         <li><label for="wifi_key">Your Wifi password</label></li>

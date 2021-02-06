@@ -144,7 +144,7 @@ select.wifiNetworkInputs {
 }
 
 .vol{
-        font-size: 3rem;
+        font-size: 2rem;
         color: #ffffcc;
 }
 
@@ -155,26 +155,26 @@ select.wifiNetworkInputs {
 
 .button{
         color: #ffffff;
-        background-color: #000000;
+        background-color: #2b0000;
         border-radius: 100%;
 }
 
 .button2{
         color: #ffffff;
-        background-color: #4d2600;
-        border-radius: 15%;
+        background-color: #2b0000;
+        border-radius: 10%;
 }
 
 .button3{
         color: #ffffff;
-        background-color: #990000;
-        border-radius: 50%;
+        background-color: #002136;
+        border-radius: 100%;
 }
 
 .button4{
         color: #ffffff;
-        background-color: #001a09;
-        border-radius: 30%;
+        background-color: #2b0000;
+        border-radius: 50%;
 }
 
 /* Wifi Icon

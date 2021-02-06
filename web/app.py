@@ -32,6 +32,22 @@ def save_credentials():
     os.system('sed -i "$ i bash /root/startwifi" /etc/rc.local')
     os.system('bash /root/wifi')
 
+@app.route('/input')
+def input():
+    return render_template('input.html')
+
+@app.route('/sound')
+def sound():
+    return render_template('sound.html')
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
+@app.route('/power')
+def power():
+    return render_template('power.html')
+
 @app.route('/net')
 def net():
     os.system('bash /root/net')
@@ -42,24 +58,18 @@ def net():
 @app.route('/nos')
 def nos():
     os.system('i2cset -y 1 17 5 1')
-    with open("/root/vol", "r") as f:
-         vol = f.read()
-    return render_template('app.html', vol=vol)
+    return render_template('sound.html')
 
 @app.route('/sound1')
 def sound1():
     os.system('i2cset -y 1 17 5 0')
     os.system('i2cset -y 1 17 8 4')
-    with open("/root/vol", "r") as f:
-         vol = f.read()
-    return render_template('app.html', vol=vol)
+    return render_template('sound.html')
 
 @app.route('/sound2')
 def sound2():
     os.system('i2cset -y 1 17 8 0')
-    with open("/root/vol", "r") as f:
-         vol = f.read()
-    return render_template('app.html', vol=vol)
+    return render_template('sound.html')
 
 @app.route('/¨volup', methods = ['GET', 'POST'])
 def volup():

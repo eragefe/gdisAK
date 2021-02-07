@@ -71,7 +71,7 @@ def sound2():
     os.system('i2cset -y 1 17 8 0')
     return render_template('sound.html')
 
-@app.route('/¨volup', methods = ['GET', 'POST'])
+@app.route('/volup', methods = ['GET', 'POST'])
 def volup():
     os.system('bash /root/volup')
     with open("/root/vol", "r") as f:

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+a=$(cat /root/vol)
+b=$(($a+155))
+
+i2cset -y 1 17 3 $b
+i2cset -y 1 17 4 $b
+
+#echo "$(($b-155))" > /root/vol

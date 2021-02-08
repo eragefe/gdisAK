@@ -12,9 +12,14 @@
          &nbsp;&nbsp;&nbsp; Test</button></img></a>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{{ url_for('sound') }}"><button class="button2" style="height:45px;width:120px"><img src="/static/sound.png">
          &nbsp;&nbsp;&nbsp;Sound</button></img></a></p>
-        <p align="center">&nbsp;</p>
-        <p align="center" class="vol"><a href="{{ url_for('volup') }}"><button class="button3" style="height:40px;width:40px"><img src="/static/up.png"></button></img></a>&nbsp;&nbsp;&nbsp;
-         &nbsp; {{ vol }} &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url_for('voldown') }}"><button class="button3" style="height:40px;width:40px"><img src="/static/down.png"></button></img></a></p>
+        <p align="center"><label>&nbsp;</label></p>
+
+         <form method="POST" action="volume" oninput="x.value=parseInt(a.value)">
+            <p align="center" class="vol"><output name="x" for="a">{{ vol }}</output></p>
+            <p align="center">
+            <input class="wrapper" type="range" id="a" name="a" min="0" max="100"> &nbsp;&nbsp; <input class="button" style="height:30px;width:30px" type="submit" value=">" />&nbsp;&nbsp;</p>
+         </form>
+
         <p align="center"><a href="{{ url_for('prev') }}"><button class="button" style="height:50px;width:50px"><<</button></a>
          &nbsp;&nbsp; <a href="{{ url_for('play') }}"><button class="button" style="height:50px;width:50px">> ||</button></a>
          &nbsp;&nbsp; <a href="{{ url_for('stop') }}"><button class="button" style="height:50px;width:50px">&#9632;</button></a>

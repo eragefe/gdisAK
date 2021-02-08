@@ -17,7 +17,7 @@
          <form method="POST" action="volume" oninput="x.value=parseInt(a.value)">
             <p align="center" class="vol"><output name="x" for="a">{{ vol }}</output></p>
             <p align="center">
-            <input class="wrapper" type="range" id="a" name="a" min="0" max="100"> &nbsp;&nbsp; <input class="button" style="height:30px;width:30px" type="submit" value=">" />&nbsp;&nbsp;</p>
+            <input style="width:240px" type="range" id="a" name="a" min="0" max="100"> <input class="button" style="height:30px;width:30px" type="submit" value=">" /></p>
          </form>
 
         <p align="center"><a href="{{ url_for('prev') }}"><button class="button" style="height:50px;width:50px"><<</button></a>

@@ -62,7 +62,16 @@ def power():
 @app.route('/net')
 def net():
     os.system('bash /root/net')
-    return ('', 204)
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
+
+@app.route('/s1', methods = ['GET', 'POST'])
+def s1():
+    os.system('bash /root/test')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/nos')
 def nos():
@@ -140,11 +149,6 @@ def coaxial2():
     with open("/root/vol", "r") as f:
          vol = f.read()
     return render_template('app.html', vol=vol)
-
-@app.route('/s1', methods = ['GET', 'POST'])
-def s1():
-    os.system('bash /root/test')
-    return ('', 204)
 
 @app.route('/prev', methods = ['GET', 'POST'])
 def prev():

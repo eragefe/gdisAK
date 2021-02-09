@@ -28,10 +28,10 @@ def save_credentials():
     ssid = request.form['ssid']
     wifi_key = request.form['wifi_key']
     create_wpa_supplicant(ssid, wifi_key)
-    os.system('mv wifi.tmp /root/wifi')
-    os.system('sed -i "$ i bash /root/startwifi" /etc/rc.local')
-    os.system('bash /root/wifi')
-    return ('', 204)
+    os.system('bash wifi.tmp')
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route("/volume", methods = ['GET', 'POST'])
 def volume():
@@ -42,12 +42,6 @@ def volume():
     with open("/root/vol", "r") as f:
          vol = f.read()
     return ('', 204)
-
-def create_file(a):
-
-    temp_conf_file = open('vol.tmp', 'w')
-    temp_conf_file.write('' + a + '')
-    temp_conf_file.close
 
 @app.route('/input')
 def input():
@@ -115,27 +109,37 @@ def poweroff():
 @app.route('/streamer', methods = ['GET', 'POST'])
 def streamer():
     os.system('bash /root/streamer')
-    return ('', 204)
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/optical1', methods = ['GET', 'POST'])
 def optical1():
     os.system('bash /root/optical1')
-    return ('', 204)
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/optical2', methods = ['GET', 'POST'])
 def optical2():
     os.system('bash /root/optical2')
-    return ('', 204)
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/coaxial1', methods = ['GET', 'POST'])
 def coaxial1():
     os.system('bash /root/coaxial1')
-    return ('', 204)
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/coaxial2', methods = ['GET', 'POST'])
 def coaxial2():
     os.system('')
-    return ('', 204)
+    with open("/root/vol", "r") as f:
+         vol = f.read()
+    return render_template('app.html', vol=vol)
 
 @app.route('/s1', methods = ['GET', 'POST'])
 def s1():
@@ -163,6 +167,12 @@ def next():
     return ('', 204)
 
 ######## FUNCTIONS ##########
+
+def create_file(a):
+
+    temp_conf_file = open('vol.tmp', 'w')
+    temp_conf_file.write('' + a + '')
+    temp_conf_file.close
 
 def scan_wifi_networks():
     iwlist_raw = subprocess.Popen(['iwlist', 'scan'], stdout=subprocess.PIPE)
